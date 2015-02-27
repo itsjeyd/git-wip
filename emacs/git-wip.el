@@ -2,8 +2,12 @@
 
 (defun git-wip-wrapper ()
   (interactive)
-  (shell-command (concat "git-wip save \"WIP from emacs: " (buffer-file-name) "\" --editor -- " (buffer-file-name)))
-  (message (concat "Wrote and git-wip'd " (buffer-file-name))))
+  (let* ((file-name (buffer-file-name))
+         (msg (format "[%s] WIP from emacs: %s"
+                      (format-time-string "%Y-%m-%d %T") file-name)))
+    (start-process "git-wip" nil "git-wip"
+                   "save" msg "--editor" "--" file-name)
+    (message (format "Wrote and git-wip'd %s." file-name))))
 
 (defun git-wip-if-git ()
   (interactive)
