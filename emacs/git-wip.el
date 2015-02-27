@@ -1,4 +1,6 @@
-(defun git-wip-wrapper () 
+(add-to-list 'exec-path "~/git-wip")
+
+(defun git-wip-wrapper ()
   (interactive)
   (shell-command (concat "git-wip save \"WIP from emacs: " (buffer-file-name) "\" --editor -- " (buffer-file-name)))
   (message (concat "Wrote and git-wip'd " (buffer-file-name))))
