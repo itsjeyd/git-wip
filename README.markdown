@@ -77,12 +77,20 @@ you don't have to remember to run `git-wip` manually.
 ## Vim
 
 To add `git-wip` support to Vim you can install the provided Vim
-plugin.
+plugin. There are a few ways to do this.
+
+**(1)** If you're using [Vundle](https://github.com/gmarik/Vundle.vim), you
+just need to include the following line in your `.vimrc`:
+
+    Bundle 'bartman/git-wip', {'rtp': 'vim/'}
+
+**(2)** You can also copy the `git-wip.vim` into your Vim runtime:
 
     cp vim/plugin/git-wip ~/.vim/plugin/git-wip
 
-Alternatively, you can add the following to your `.vimrc`; doing so
-will cause `git-wip` to be invoked after every `:w` operation:
+**(3)** Alternatively, you can add the following to your `.vimrc`;
+doing so will cause `git-wip` to be invoked after every `:w`
+operation:
 
     augroup git-wip
       autocmd!
@@ -103,6 +111,11 @@ operation:
 
 Alternatively, you can copy the content of `git-wip.el` to your
 `.emacs`.
+
+## Sublime
+
+A Sublime plugin was contributed as well. You can find it in the
+`sublime` directory.
 
 # Recovery
 
@@ -142,4 +155,4 @@ specifying a filename to unstage. You can then stage them again using
 `git add` or `git add -p`. Finally, when you're happy with the
 changes, commit them.
 
-<!-- vim: set ft=mkd -->
+<!-- vim: set ft=markdown -->
