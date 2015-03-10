@@ -112,6 +112,29 @@ operation:
 Alternatively, you can copy the content of `git-wip.el` to your
 `.emacs`.
 
+### Bonus: Magit integration
+
+If you use [`magit`](https://github.com/magit/magit), you might be
+interested in having your WIP commits listed in the `*magit-log*`
+buffer. Follow these steps to do this interactively:
+
+1. Hit <kbd>l</kbd> to bring up the menu for logging.
+
+2. Enter `-al` to enable the `--all` switch.
+
+3. Hit <kbd>l</kbd> (or <kbd>L</kbd>, if you want to see stats as
+   well).
+
+If you want to enable the `--all` switch by default, you can add the
+following code to your init-file:
+
+    (defun magit-log-all ()
+      (interactive)
+      (magit-key-mode-popup-logging)
+      (magit-key-mode-toggle-option 'logging "--all"))
+
+    (define-key magit-mode-map (kbd "l") 'magit-log-all)
+
 ## Sublime
 
 A Sublime plugin was contributed as well. You can find it in the
