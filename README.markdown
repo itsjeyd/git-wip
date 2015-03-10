@@ -126,7 +126,7 @@ buffer. Follow these steps to do this interactively:
    well).
 
 If you want to enable the `--all` switch by default, you can add the
-following code to your init-file:
+following code to your `.emacs`:
 
     (defun magit-log-all ()
       (interactive)
