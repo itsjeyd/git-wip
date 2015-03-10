@@ -135,6 +135,24 @@ following code to your `.emacs`:
 
     (define-key magit-mode-map (kbd "l") 'magit-log-all)
 
+### Bonus: Walking through WIP versions of files
+
+1. Install
+   [`git-wip-timemachine`](https://github.com/pidu/git-timemachine)
+   from MELPA via:
+
+   <kbd>M-x</kbd> `package-install` <kbd>RET</kbd> `git-wip-timemachine` <kbd>RET</kbd>
+
+2. From any file that has some WIP commits associated with it:
+
+   <kbd>M-x</kbd> `git-wip-timemachine` <kbd>RET</kbd>
+
+3. Navigate between WIP versions of the file using <kbd>n</kbd> and
+   <kbd>p</kbd>. To quit the time machine, press <kbd>q</kbd>.
+
+For more information, see the `git-wip-timemachine`
+[README](https://github.com/itsjeyd/git-wip-timemachine/blob/master/README.md).
+
 ## Sublime
 
 A Sublime plugin was contributed as well. You can find it in the
